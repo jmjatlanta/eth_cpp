@@ -1,3 +1,5 @@
+#include <gtest/gtest.h>
+
 #include "../types.h"
 
 #include <iostream>
@@ -12,14 +14,14 @@ bool test_eq(const EthCpp::Quantity& lhs, uint64_t rhs)
     return true;
 }
 
-int main(int argc, char** argv)
+TEST(test_types, Quantity)
 {
     EthCpp::Quantity q("0x0");
-    test_eq(q, 0);
+    EXPECT_EQ(q.value, 0);
     q = EthCpp::Quantity("0x1");
-    test_eq(q, 1);
+    EXPECT_EQ(q.value, 1);
     q = EthCpp::Quantity("0xff");
-    test_eq(q, 255);
+    EXPECT_EQ(q.value, 255);
     q = EthCpp::Quantity("0x4b7");
-    test_eq(q, 1207);
+    EXPECT_EQ(q.value, 1207);
 }

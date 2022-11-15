@@ -11,6 +11,7 @@ EthCpp::EthCpp(const std::string& filename)
         throw 1; //TODO
     eth.init(ipc);
     web3.init(ipc);
+    les.init(ipc);
 }
 
 } // namespace EthCpp

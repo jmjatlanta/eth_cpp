@@ -1,13 +1,12 @@
+#include <gtest/gtest.h>
+
 #include "../EthCpp.h"
 #include "../Eth.h"
 
-#include <iostream>
-#include <string>
-
-int main(int argc, char** argv)
+TEST(test_block, connector)
 {
     EthCpp::EthCpp connector("/media/jmjatlanta/LinuxUSB/eth_mainnet/geth.ipc");
 
     EthCpp::Quantity qty = connector.eth.blockNumber();
-    std::cout << "Quantity: " << qty.value << "\n";
+    EXPECT_EQ(qty.value, 0);	
 }

@@ -2,6 +2,7 @@
 
 #include "Eth.h"
 #include "Web3.h"
+#include "Les.h"
 
 #include <string>
 #include <memory>
@@ -18,6 +19,7 @@ class EthCpp
 
     Eth eth;
     Web3 web3;
+    Les les;
 
     protected:
     std::shared_ptr<IPCConnector> ipc = nullptr;
